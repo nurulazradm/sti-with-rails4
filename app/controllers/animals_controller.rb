@@ -29,7 +29,7 @@ class AnimalsController < ApplicationController
 
     respond_to do |format|
       if @animal.save
-        format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
+        format.html { redirect_to @animal, notice: "#{race} was successfully created." }
         format.json { render :show, status: :created, location: @animal }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AnimalsController < ApplicationController
   def update
     respond_to do |format|
       if @animal.update(animal_params)
-        format.html { redirect_to @animal, notice: 'Animal was successfully updated.' }
+        format.html { redirect_to @animal, notice: "#{race} was successfully updated." }
         format.json { render :show, status: :ok, location: @animal }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AnimalsController < ApplicationController
   def destroy
     @animal.destroy
     respond_to do |format|
-      format.html { redirect_to animals_url, notice: 'Animal was successfully destroyed.' }
+      format.html { redirect_to animals_url, notice: "#{race} was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -70,7 +70,7 @@ class AnimalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def animal_params
-      params.fetch(:animal, {})
+      params.require(race.underscore.to_sym).permit(:name, :race, :age)
     end
 
     def set_race

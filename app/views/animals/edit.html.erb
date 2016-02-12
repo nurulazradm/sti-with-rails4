@@ -1,6 +1,6 @@
-<h1>Editing Animal</h1>
+<h1>Editing <%= "#{@race}" %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @animal %> |
-<%= link_to 'Back', animals_path %>
+<%= link_to 'Show', sti_animal_path(@race, @animal) %> |
+<%= link_to 'Back', sti_animal_path(@race) %>

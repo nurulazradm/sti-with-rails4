@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Animals</h1>
+<h1>Listing <%= animal_header %></h1>
 
 <table>
   <thead>
@@ -19,9 +19,9 @@
         <td><%= animal.race %></td>
         <td><%= animal.age %></td>
         <td><%= link_to 'Show', sti_animal_path(animal.race, animal) %></td>
-        <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-        <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "See all #{animal.race.pluralize}", sti_animal_path(animal.race) %></td>
+        <td><%= link_to 'Edit', sti_animal_path(animal.race, animal, :edit) %></td>
+        <td><%= link_to 'Destroy', sti_animal_path(animal.race, animal), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "See all #{animal.race.pluralize}", sti_animal_path(animal.race) if params[:type].nil? %></td>
       </tr>
     <% end %>
   </tbody>

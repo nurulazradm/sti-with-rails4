@@ -10,4 +10,8 @@ module AnimalsHelper
   def format_action(action)
     action ? "#{action}_" : ""
   end
+
+  def animal_header
+    params[:type].nil? ? 'All Animals' : params[:type].to_s.pluralize
+  end
 end
