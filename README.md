@@ -1,0 +1,1 @@
+# sti-with-rails4
