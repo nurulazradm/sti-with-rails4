@@ -1,1 +1,5 @@
-class Meerkat < Animal; end
+class Meerkat < Animal
+  def talk
+    "Hakuna Matata, what a wonderful phrase !"
+  end
+end
