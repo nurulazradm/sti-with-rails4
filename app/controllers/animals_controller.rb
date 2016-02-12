@@ -15,7 +15,7 @@ class AnimalsController < ApplicationController
 
   # GET /animals/new
   def new
-    @animal = Animal.new
+    @animal = race_class.new
   end
 
   # GET /animals/1/edit
