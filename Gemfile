@@ -45,3 +45,5 @@ group :development do
   gem 'spring'
 end
 
+gem 'sprockets', '~> 3.7', '>= 3.7.2'
+
